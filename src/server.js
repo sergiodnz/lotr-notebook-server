@@ -14,5 +14,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/character', routes.character);
+app.use('/quote', routes.quote);
 
 app.listen(PORT, () => console.log(RIDDLE));
