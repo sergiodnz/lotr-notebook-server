@@ -1,6 +1,6 @@
 import axios from '../config/axios';
 
-export const getCharacters = (page, limit) => {
+export const getAll = (page, limit) => {
   const begin = page * limit;
   const end = begin + limit;
 
@@ -15,5 +15,27 @@ export const getCharacters = (page, limit) => {
     const data = end <= listSize ? docs.slice(begin, end) : docs.slice(begin);
 
     return { data, total: items.total, page, limit };
+  });
+};
+
+export const getByID = id => {
+  return axios.get(`/character/${id}`).then(res => res.data);
+};
+
+export const getByName = name => {
+  return axios.get('/character').then(res => {
+    const { docs } = res.data;
+    if (!docs || docs.length === 0) {
+      return [];
+    }
+    const chars = docs.filter(char => char.name.toLowerCase().includes(name));
+    return chars;
+  });
+};
+
+export const getQuotes = charID => {
+  return axios.get(`/character/${charID}/quote`).then(res => {
+    const { docs, items } = res.data;
+    return { data: docs, total: items.total };
   });
 };
