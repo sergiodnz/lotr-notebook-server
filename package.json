@@ -1,0 +1,23 @@
+{
+  "name": "lotr-api-client",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Claudio Romero",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js",
+    "start": "babel-node src/server.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.3",
+    "@babel/preset-env": "^7.10.3",
+    "nodemon": "^2.0.4"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
