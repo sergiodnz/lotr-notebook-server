@@ -1,3 +1,5 @@
+import { getResponse } from './util';
+
 export const schema = {
   Quote: {
     type: 'object',
@@ -38,16 +40,7 @@ export const paths = {
         },
       ],
       responses: {
-        '200': {
-          description: 'Quote object',
-          content: {
-            'application/json': {
-              schema: {
-                $ref: '#/components/schemas/Quote',
-              },
-            },
-          },
-        },
+        '200': getResponse('Quote object', 'Quote'),
       },
     },
   },

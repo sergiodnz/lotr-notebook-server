@@ -1,3 +1,5 @@
+import { getResponse } from './util';
+
 export const schema = {
   Character: {
     type: 'object',
@@ -30,15 +32,9 @@ export const schema = {
           $ref: '#/components/schemas/Character',
         },
       },
-      page: {
-        type: 'integer',
-      },
-      limit: {
-        type: 'integer',
-      },
-      total: {
-        type: 'integer',
-      },
+      page: { type: 'integer' },
+      limit: { type: 'integer' },
+      total: { type: 'integer' },
     },
   },
 };
@@ -52,31 +48,21 @@ export const paths = {
         {
           name: 'page',
           in: 'query',
-          schema: {
-            type: 'integer',
-          },
+          schema: { type: 'integer' },
           required: false,
         },
         {
           name: 'limit',
           in: 'query',
-          schema: {
-            type: 'integer',
-          },
+          schema: { type: 'integer' },
           required: false,
         },
       ],
       responses: {
-        '200': {
-          description: 'List of LOTR Characters and pagination info',
-          content: {
-            'application/json': {
-              schema: {
-                $ref: '#/components/schemas/CharactersPaginated',
-              },
-            },
-          },
-        },
+        '200': getResponse(
+          'List of LOTR Characters and pagination info',
+          'CharactersPaginated'
+        ),
       },
     },
   },
@@ -93,16 +79,10 @@ export const paths = {
         },
       ],
       responses: {
-        '200': {
-          description: 'Filtered list of characters. No pagination.',
-          content: {
-            'application/json': {
-              schema: {
-                $ref: '#/components/schemas/Characters',
-              },
-            },
-          },
-        },
+        '200': getResponse(
+          'Filtered list of characters. No pagination.',
+          'Characters'
+        ),
       },
     },
   },
@@ -119,16 +99,7 @@ export const paths = {
         },
       ],
       responses: {
-        '200': {
-          description: 'Characters detailed data',
-          content: {
-            'application/json': {
-              schema: {
-                $ref: '#/components/schemas/Character',
-              },
-            },
-          },
-        },
+        '200': getResponse('Characters detailed data', 'Character'),
       },
     },
   },
@@ -145,16 +116,7 @@ export const paths = {
         },
       ],
       responses: {
-        '200': {
-          description: `Character's list of quotes`,
-          content: {
-            'application/json': {
-              schema: {
-                $ref: '#/components/schemas/Quotes',
-              },
-            },
-          },
-        },
+        '200': getResponse(`Character's list of quotes`, 'Quotes'),
       },
     },
   },

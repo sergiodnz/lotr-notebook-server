@@ -1,3 +1,5 @@
+import { getResponse } from './util';
+
 export const schema = {
   Movie: {
     type: 'object',
@@ -25,16 +27,7 @@ export const paths = {
       tags: ['movies'],
       description: 'Get a list of LOTR / Hobbit movies',
       responses: {
-        '200': {
-          description: 'List of LOTR / Hobbit movies',
-          content: {
-            'application/json': {
-              schema: {
-                $ref: '#/components/schemas/Movies',
-              },
-            },
-          },
-        },
+        '200': getResponse('List of LOTR / Hobbit movies', 'Movies'),
       },
     },
   },
@@ -51,16 +44,7 @@ export const paths = {
         },
       ],
       responses: {
-        '200': {
-          description: 'Movie Details',
-          content: {
-            'application/json': {
-              schema: {
-                $ref: '#/components/schemas/Movie',
-              },
-            },
-          },
-        },
+        '200': getResponse('Movie Details', 'Movie'),
       },
     },
   },

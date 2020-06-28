@@ -1,6 +1,7 @@
 import * as characters from './characters';
 import * as quotes from './quotes';
 import * as movies from './movies';
+import * as books from './books';
 
 const apiDocs = {
   openapi: '3.0.1',
@@ -14,53 +15,34 @@ const apiDocs = {
       url: 'http://https://opensource.org/licenses/MIT',
     },
   },
-  security: [
-    {
-      bearerAuth: [],
-    },
-  ],
-  servers: [
-    {
-      url: 'http://localhost:5000/',
-      description: 'Local server',
-    },
-  ],
+  security: [{ bearerAuth: [] }],
+  servers: [{ url: 'http://localhost:5000/', description: 'Local server' }],
   tags: [
-    {
-      name: 'characters',
-    },
-    {
-      name: 'quotes',
-    },
-    {
-      name: 'movies',
-    },
+    { name: 'characters' },
+    { name: 'quotes' },
+    { name: 'movies' },
+    { name: 'books' },
   ],
   paths: {
     ...characters.paths,
     ...quotes.paths,
     ...movies.paths,
+    ...books.paths,
   },
   components: {
     securitySchemes: {
-      bearerAuth: {
-        type: 'http',
-        scheme: 'bearer',
-      },
+      bearerAuth: { type: 'http', scheme: 'bearer' },
     },
     schemas: {
       ...characters.schema,
       ...quotes.schema,
       ...movies.schema,
+      ...books.schema,
       Error: {
         type: 'object',
         properties: {
-          message: {
-            type: 'string',
-          },
-          internal_code: {
-            type: 'string',
-          },
+          message: { type: 'string' },
+          internal_code: { type: 'string' },
         },
       },
     },

@@ -4,7 +4,7 @@ import cors from 'cors';
 import bodyParser from 'body-parser';
 
 import swaggerUI from 'swagger-ui-express';
-import openApiDocs from './docs/openApiDocs';
+import openApiDocs from './docs';
 
 import { authMiddleware } from './config/axios';
 import routes from './routes';
