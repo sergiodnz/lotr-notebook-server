@@ -1,7 +1,7 @@
 # LOTR Notebook Server
 Backend server built with NodeJS, made to support "React Development & API Integration" teaching.
 
-As you should have seen, the theme is The Lord of The Rings, best book/movie ever.
+As you should have seen, the theme is The Lord of The Rings (best book/movie ever).
 
 ## Instalation
 
@@ -21,7 +21,7 @@ NPM could be used instead, but YARN is recommended. Server is starts listening o
 
 ### Documentation
 
-The API docs can be found at `http://<SERVER_HOST>/api-docs`.
+The API docs can be found at `http://localhost:5000/api-docs`.
 
 ### Authentication
 
