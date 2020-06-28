@@ -28,8 +28,8 @@ export const getByName = name => {
     if (!docs || docs.length === 0) {
       return [];
     }
-    const chars = docs.filter(char => char.name.toLowerCase().includes(name));
-    return chars;
+    const matchCriteria = char => char.name.toLowerCase().includes(name);
+    return docs.filter(matchCriteria);
   });
 };
 
