@@ -21,7 +21,7 @@ NPM could be used instead, but YARN is recommended. Server is starts listening o
 
 ### Documentation
 
-The API docs can be found at `${SERVER_HOST}/api-docs`.
+The API docs can be found at `http://<SERVER_HOST>/api-docs`.
 
 ### Authentication
 
