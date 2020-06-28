@@ -9,7 +9,7 @@ export const authMiddleware = (req, res, next) => {
     next();
   } else {
     res.status(403).send({
-      error: `YOU SHALL NOT PASS! (not without an authorization header)`,
+      error: `YOU SHALL NOT PASS! (at least, not without an authorization header)`,
     });
   }
 };

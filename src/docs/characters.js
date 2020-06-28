@@ -132,7 +132,7 @@ export const paths = {
       },
     },
   },
-  '/characters/{id}/quote': {
+  '/characters/{id}/quotes': {
     get: {
       tags: ['characters'],
       description: 'Quotes of the character',

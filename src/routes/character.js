@@ -12,12 +12,13 @@ router.get('/:id', (req, res) => {
   API.getByID(req.params.id).then(data => res.send(data));
 });
 
-router.get('/:id/quote', (req, res) => {
+router.get('/:id/quotes', (req, res) => {
   API.getQuotes(req.params.id).then(data => res.send(data));
 });
 
 router.get('/name/:name', (req, res) => {
-  API.getByName(req.params.name).then(data => res.send(data));
+  const name = req.params.name;
+  API.getByName(name).then(data => res.send(data));
 });
 
 export default router;

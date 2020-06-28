@@ -23,3 +23,32 @@ export const schema = {
     },
   },
 };
+
+export const paths = {
+  '/quotes/{id}': {
+    get: {
+      tags: ['quotes'],
+      description: `Get specific quote by id`,
+      parameters: [
+        {
+          name: 'id',
+          in: 'path',
+          required: true,
+          description: `The quote's _id`,
+        },
+      ],
+      responses: {
+        '200': {
+          description: 'Quote object',
+          content: {
+            'application/json': {
+              schema: {
+                $ref: '#/components/schemas/Quote',
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+};

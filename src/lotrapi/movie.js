@@ -1,10 +1,7 @@
 import axios from '../config/axios';
 
 export const getAll = () => {
-  return axios.get('/movie').then(res => {
-    const { docs, items } = res.data;
-    return { data: docs, total: items.total };
-  });
+  return axios.get('/movie').then(res => res.data.docs);
 };
 
 export const getByID = id => {
