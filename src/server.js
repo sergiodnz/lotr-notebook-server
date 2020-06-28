@@ -24,6 +24,6 @@ app.use('/books', routes.book);
 app.use('/movies', routes.movie);
 
 const PORT = 5000;
-const LISTENING_MSG = `\nIn a hole in the ground there lived a Hobbit --> http://localhost:${PORT}\n`;
+const LISTENING_MSG = `\nThe Doors of Durin, Lord of Moria. Speak "Authorization Header" and enter. --> http://localhost:${PORT}\n`;
 
 app.listen(PORT, () => console.log(LISTENING_MSG));

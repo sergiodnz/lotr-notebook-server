@@ -9,7 +9,7 @@ export const authMiddleware = (req, res, next) => {
     next();
   } else {
     res.status(403).send({
-      error: `The Doors of Durin, Lord of Moria. Speak "Authorization Header" and enter.`,
+      error: `YOU SHALL NOT PASS! (not without an authorization header)`,
     });
   }
 };
