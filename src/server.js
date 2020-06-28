@@ -15,5 +15,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use('/character', routes.character);
 app.use('/quote', routes.quote);
+app.use('/book', routes.book);
+app.use('/movie', routes.movie);
 
 app.listen(PORT, () => console.log(RIDDLE));
