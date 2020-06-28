@@ -6,3 +6,7 @@ export const getAll = () => {
     return { data: docs, total: items.total };
   });
 };
+
+export const getByID = id => {
+  return axios.get(`/book/${id}`).then(res => res.data);
+};

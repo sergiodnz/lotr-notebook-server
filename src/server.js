@@ -19,6 +19,6 @@ app.use('/book', routes.book);
 app.use('/movie', routes.movie);
 
 const PORT = 5000;
-const LISTENING_MSG = `In a hole in the ground there lived a Hobbit --> http://localhost:${PORT}`;
+const LISTENING_MSG = `\nIn a hole in the ground there lived a Hobbit --> http://localhost:${PORT}\n`;
 
 app.listen(PORT, () => console.log(LISTENING_MSG));

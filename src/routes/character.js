@@ -5,28 +5,19 @@ const router = Router();
 
 router.get('/', (req, res) => {
   const { page = '0', limit = '5' } = req.query;
-  API.getAll(parseInt(page), parseInt(limit)).then(data => {
-    res.send(data);
-  });
+  API.getAll(parseInt(page), parseInt(limit)).then(data => res.send(data));
 });
 
 router.get('/:id', (req, res) => {
-  API.getByID(req.params.id).then(data => {
-    res.send(data);
-  });
+  API.getByID(req.params.id).then(data => res.send(data));
 });
 
 router.get('/:id/quote', (req, res) => {
-  API.getQuotes(req.params.id).then(data => {
-    res.send(data);
-  });
+  API.getQuotes(req.params.id).then(data => res.send(data));
 });
 
 router.get('/name/:name', (req, res) => {
-  const { name } = req.params;
-  API.getByName(name).then(data => {
-    res.send(data);
-  });
+  API.getByName(req.params.name).then(data => res.send(data));
 });
 
 export default router;
