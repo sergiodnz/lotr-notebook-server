@@ -6,7 +6,7 @@ As you should have seen, the theme is The Lord of The Rings (best book/movie eve
 ## Instalation
 
 To install all module dependencies, run:
-```bash
+```sh
 yarn install
 ```
 
@@ -15,7 +15,7 @@ To run the application server:
 yarn start
 ```
 
-NPM could be used instead, but YARN is recommended. Server is starts listening on PORT `5000`, if avaliable.
+NPM could be used instead, but YARN is recommended. Server starts listening on PORT `5000`, if avaliable.
 
 ## Usage
 
@@ -25,7 +25,7 @@ The API docs can be found at `http://localhost:5000/api-docs`.
 
 ### Authentication
 
-An authorization header is required for all the requests (except for docs), because of some external API requets. It should follow the format:
+An authorization header is required for all the requests (except for docs), because of some third-party API. They should follow the format:
 ```
 Authorization: Bearer <YOUR_API_KEY>
 ```
